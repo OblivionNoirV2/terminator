@@ -1,16 +1,17 @@
 #include <iostream>
-
+#include <fstream> //for file reading/writing
 using namespace std;
 
 string check_os(); 
 
-void kill_programs(const string& detected_os_final); //recieves os and list of programs to kill (may be a list if this is started with multiple offenders running)
+void kill_programs(const string& detected_os_final, char* death_row[]); //recieves os and list of programs to kill (may be a list if this is started with multiple offenders running)
 
-//-l for load kill profile, -d for delete kill profiles(array), -sd for set default, -a for auto (uses default if it exists)
-int main(int argc, char* argv[]){ //number of args, array of null terminated pointers for those args
+//-l for load kill profile, -d for delete kill profiles(array), -sd for set default, -a for auto (uses default if it exists), -c for create profile, -i for instructions (this runs by default the first time)
+int main(){ //number of args, array of null terminated pointers for those args
     string detected_os_final = check_os();
     cout << detected_os_final << endl;
-    kill_programs(detected_os_final);
+    //char* death_row[] = {"temp"};
+    //kill_programs(detected_os_final, death_row);
     return 0;
 }
 
@@ -28,11 +29,11 @@ string check_os() {
     return detected_os; //need this to be passed to the kill function
 };
 
-void kill_programs(const string& detected_os_final){
+void kill_programs(const string& detected_os_final, char* death_row[]){
     cout << "inside kill, " << detected_os_final << endl;
         //system("taskkill /F /IM discord.exe >nul 2>&1"); windows 
 
-}
+};
 
 //will have pause options, and a list of forbidden programs, as well as time limits for each
 
