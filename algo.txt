@@ -1,0 +1,5 @@
+1. detect os 
+2. if compatible os, get user input through arguments 
+2. based on this, either create, load, delete or auto run a profile. If there are no profiles (settings for what should be killed, basically) display a message suggesting you create one 
+3. if one is created, ask if a timer is wanted. if yes, ask how long (or until shutdown) and start the timer until that profile is allowed again 
+4. the creation will involve writing to a txt file and finding the corresponding number profile (ordered 1, 2, 3 etc)
