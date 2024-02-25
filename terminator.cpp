@@ -4,13 +4,16 @@ using namespace std;
 
 string check_os(); 
 
-int main(){
-    system("taskkill /F /IM discord.exe >nul 2>&1");
+void kill_programs(); //recieves list of programs to kill (may be a list if this is started with multiple offenders running)
+
+//-l for load kill profile, -d for delete kill profiles(array), -sd for set default, -a for auto (uses default if it exists)
+int main(int argc, char* argv[]){ 
+    //system("taskkill /F /IM discord.exe >nul 2>&1");
     check_os();
     return 0;
 }
 
-//check os
+//check os, bc the way to kill programs varies 
 string check_os() {
     string detected_os; 
     #if __linux__
