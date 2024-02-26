@@ -1,5 +1,5 @@
 #include <iostream>
-#include <fstream> //for file reading/writing
+
 using namespace std;
 
 string check_os(); 
@@ -20,7 +20,7 @@ string check_os() {
     string current_os; 
     #if _WIN32 || _WIN64
         current_os = "Windows";
-    #elif __Linux__
+    #elif __linux__
         current_os = "Linux";
     #else 
         std::cout << "Unrecognized operating system. This program works on Windows and Linux" << endl; 
