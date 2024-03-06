@@ -27,16 +27,9 @@ int main()
 
             while(getline(config_file, display_intro_msg_line)) 
             { // Go until it's found the line that holds this setting
-                size_t found = display_intro_msg_line.find("display_intro = true"); 
-                if (read_config(found) == true) 
-                {
-                    display_intro_msg = true; 
-                    break;
-                } else 
-                {
-                    display_intro_msg = false; 
-                    break; 
-                }
+                size_t found = display_intro_msg_line.find("display_intro = true"); //find returns a size_t
+                display_intro_msg = (read_config(found) == true) ? true : false;
+                break;
             }
             config_file.close();
         }
@@ -55,12 +48,7 @@ int main()
 
 bool read_config(size_t found)
 {
-    if (found != string::npos) {
-        return true; 
-    } else {
-        return false; 
-    }
-
+    return found != string::npos ? true : false; 
 }
 
 //check os, bc the way to kill programs varies 
