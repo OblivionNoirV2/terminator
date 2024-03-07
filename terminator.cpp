@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <json/json.h> 
 
 using namespace std;
 
@@ -30,24 +31,25 @@ class IntroConfig
                     return current_os;
         };
 
-        void read_config() 
-        {
-            if (os == "Windows") 
-            {
-                std::ifstream config_file("config.txt"); //read settings file here 
-                if (config_file.is_open()) 
-                {
-                    string display_intro_msg_line;
-                    while(getline(config_file, display_intro_msg_line)) 
-                    {
-                        size_t found = display_intro_msg_line.find("display_intro = true");
-                        display_intro_msg = (found != string::npos);
-                        break;
-                    };
-                    config_file.close();
-                };
-            };
-        };
+       void read_config() {
+    if (os == "Windows") {
+        std::ifstream config_file("config.json"); // Read settings file here
+        if (config_file.is_open()) {
+            Json::Value root;
+            Json::CharReaderBuilder builder;
+            string errors;
+            if (!Json::parseFromStream(builder, config_file, &root, &errors)) {
+                cerr << "Error parsing JSON: " << errors << endl;
+                return;
+            }
+            display_intro_msg = root["display_intro"].asBool();
+            config_file.close();
+        } else {
+            cerr << "Error: Unable to open file config.json" << endl;
+        }
+    }
+}
+
 
         void set_config() //take in array of things to change 
         {
