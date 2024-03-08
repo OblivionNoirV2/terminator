@@ -1,2 +1,3 @@
+/mnt/c/Users/rosly/Documents/vscode/terminator/out/build/CMakeFiles/Terminator.dir
 /mnt/c/Users/rosly/Documents/vscode/terminator/out/build/CMakeFiles/edit_cache.dir
 /mnt/c/Users/rosly/Documents/vscode/terminator/out/build/CMakeFiles/rebuild_cache.dir

@@ -116,6 +116,43 @@ depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+#=============================================================================
+# Target rules for targets named Terminator
+
+# Build rule for target.
+Terminator: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Terminator
+.PHONY : Terminator
+
+# fast build rule for target.
+Terminator/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Terminator.dir/build.make CMakeFiles/Terminator.dir/build
+.PHONY : Terminator/fast
+
+terminator.o: terminator.cpp.o
+.PHONY : terminator.o
+
+# target to build an object file
+terminator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Terminator.dir/build.make CMakeFiles/Terminator.dir/terminator.cpp.o
+.PHONY : terminator.cpp.o
+
+terminator.i: terminator.cpp.i
+.PHONY : terminator.i
+
+# target to preprocess a source file
+terminator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Terminator.dir/build.make CMakeFiles/Terminator.dir/terminator.cpp.i
+.PHONY : terminator.cpp.i
+
+terminator.s: terminator.cpp.s
+.PHONY : terminator.s
+
+# target to generate assembly for a file
+terminator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Terminator.dir/build.make CMakeFiles/Terminator.dir/terminator.cpp.s
+.PHONY : terminator.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -124,6 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Terminator"
+	@echo "... terminator.o"
+	@echo "... terminator.i"
+	@echo "... terminator.s"
 .PHONY : help
 
 

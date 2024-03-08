@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/Terminator.dir/terminator.cpp.o -o Terminator 

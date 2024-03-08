@@ -148,7 +148,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Project
+CMAKE_PROJECT_NAME:STATIC=Terminator
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -223,6 +223,15 @@ Project_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 Project_SOURCE_DIR:STATIC=/mnt/c/Users/rosly/Documents/vscode/terminator
+
+//Value Computed by CMake
+Terminator_BINARY_DIR:STATIC=/mnt/c/Users/rosly/Documents/vscode/terminator/out/build
+
+//Value Computed by CMake
+Terminator_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+Terminator_SOURCE_DIR:STATIC=/mnt/c/Users/rosly/Documents/vscode/terminator
 
 
 ########################
